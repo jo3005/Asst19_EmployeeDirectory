@@ -1,0 +1,27 @@
+[
+    {
+        "firstname": "Stewart",
+        "lastname": "Manning",
+        "id": 24390679,
+        "photo": "https://avatars2.githubusercontent.com/u/24390679?v=4",
+        "jobtitle": "CEO",
+        "email": "stewart.manning@xcomp.com"
+    },
+    {
+        "firstname": "Alan",
+        "lastname": "Fraser",
+        "id": 11095731,
+        "photo": "https://avatars0.githubusercontent.com/u/11095731?v=4",
+        "jobtitle": "Engineering Manager",
+        "email": "alan.fraser@xcomp.com" 
+    },
+    {
+        "firstname": "Lisa",
+        "lastname": "McDonald",
+        "id": 189606,
+        "photo": "https://avatars0.githubusercontent.com/u/189606?v=4",
+        "jobtitle": "Personal Assistant",
+        "email": "lisa.mcdonald@xcomp.com" 
+    }
+        
+]
