@@ -7,7 +7,7 @@ function Form(props) {
     <div>
       
       <form className="form-group mt-5" 
-        onSubmit={evt => {
+        onClick={evt => {
             evt.preventDefault(); 
             props.handleFormSubmit(inputRef.current.value)
             }

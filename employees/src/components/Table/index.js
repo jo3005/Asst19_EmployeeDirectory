@@ -7,11 +7,13 @@ import Tablebody from "..//Tablebody";
 
 function Table(props) {
   return (
-    <table className="table table-sm table-striped table-hover" {...props}>
-       <Tableheader {...props}/> 
-       <Tablebody {...props}/>
-        
-    </table>
+    <div className="table-responsive">
+      <table className="table table-sm table-striped table-fixed" {...props}>
+        <Tableheader {...props}/> 
+        <Tablebody {...props}/>
+          
+      </table>
+    </div>
   );
 }
 
