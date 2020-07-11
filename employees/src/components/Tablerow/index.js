@@ -11,7 +11,7 @@ function Tablerow (props) {
             <td>{name}</td>
             <td>{jobtitle}</td>
             <td>{email}</td>
-            <td id="emp_photo">{photo}</td>
+            
         </tr>   
         
     );

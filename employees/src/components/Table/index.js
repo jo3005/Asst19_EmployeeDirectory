@@ -8,7 +8,7 @@ import Tablebody from "..//Tablebody";
 function Table(props) {
   return (
     <table className="table table-sm table-striped table-hover" {...props}>
-       <Tableheader/> 
+       <Tableheader {...props}/> 
        <Tablebody {...props}/>
         
     </table>

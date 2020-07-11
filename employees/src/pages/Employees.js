@@ -1,46 +1,68 @@
 import React, { useEffect, useState } from "react";
 import API from "../utils/API";
-//import CardContainer from "../components/CardContainer";
 import Row from "../components/Row";
 import Table from "../components/Table";
+import Form from "../components/Form";
+
 
 function Employees() {
-  const [employee, setEmployee] = useState({});
+
+
   const [employees, setEmployees] = useState([]);
-  const [empIndex, setEmpIndex] = useState(0);
+  const [allemployees,setAllEmployees]=useState([]);
+  const [filterString,setFilterString] = useState("");
 
   // When the component mounts, a call will be made to get random users.
   useEffect(() => {
     loadEmployees();
   }, []);
 
- 
-
   function loadEmployees() {
     const empArray=require("../employees.json");
+    const filterString="";
     API.fetchEmployees(empArray)
-      .then(employees => {
+        .then(employees => {
         setEmployees(employees);
-        setEmployee(employees[0]);
+        setAllEmployees(employees);
       })
       .catch(err => console.log(err));
   }
+
+  function handleFormSubmit(newfilter){
+    function filterEmployees(empString){
+      if (empString === "") setEmployees(allemployees)
+      else setEmployees(allemployees.filter(employee=> employee.name.toLowerCase().includes(newfilter.toLowerCase())))  
+    };  
+    setFilterString(newfilter)
+    filterEmployees(filterString);
+  }
+
+  function handleHeaderClick(){
+
+    let sortedArray=[...employees].sort((a,b) => a.lastname.localeCompare(b.lastname));
+    console.log("sortedarray",sortedArray);
+    setEmployees(sortedArray);
+
+    }
+
 
   return (
     <div>
       <h2 className="text-center">These are the current personnel employed at this company</h2>
       <Row >
-        testrow
+        <Form
+          handleFormSubmit={handleFormSubmit}
+        />
       </Row>
       <Row>
         <Table
           data={employees}
-
+          handleHeaderClick={handleHeaderClick}
         />
       </Row>
       
     </div>
   );
 }
-
+ 
 export default Employees;
