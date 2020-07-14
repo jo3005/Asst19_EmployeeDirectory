@@ -6,7 +6,7 @@ function Tableheader (props) {
       <thead className="thead-dark">
           <tr>
             <th scope="col">EmployeeID</th>
-            <th scope="col" onClick = {props.handleHeaderClick}>Name</th>
+            <th scope="col" data-toggle="tooltip" title="Click to sort alphabetically" onClick = {props.handleHeaderClick}>Name</th>
             
             <th scope="col">Job Title</th>
             <th scope="col">Email</th>
